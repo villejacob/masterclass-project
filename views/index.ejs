@@ -1,0 +1,10 @@
+<h1>INDEX PAGE</h1>
+
+<% classes.forEach(function(instrClass){ %>
+    <div>
+        <h2><%= instrClass.instructor %></h2>
+        <img src="<%= instrClass.default_image %>">
+        <p><%= instrClass.course %></p>
+        <a href="/classes/<%= instrClass.id %>">Read More</a>
+    </div>
+<% }) %>

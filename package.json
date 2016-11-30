@@ -1,0 +1,17 @@
+{
+  "name": "masterclassproject_ville",
+  "version": "1.0.0",
+  "description": "Dynamic webpage for MasterClass Instructor course page",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "Jacob Ville",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.5.3",
+    "express": "^4.14.0",
+    "mongoose": "^4.7.0"
+  }
+}

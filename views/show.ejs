@@ -1,0 +1,145 @@
+<% include partials/header %>
+<!--Navbar-->
+<div class="ui secondary fluid menu">
+    <div class="ui container">
+        <a href="/classes" class="item">SEE MORE INSTRUCTORS</a>
+            <a href="/" class="ui button item">MASTERCLASS</a>
+        <div class="right menu">
+            <button class="item">SIGN IN</button>
+            <button class="item">SIGN UP</button>
+        </div>
+    </div>
+</div>
+<!--Hook-->
+<div class="ui container segment">
+    <img class="ui centered image" src="<%= instrClass.trailers[0] %>">
+    <h2 class="ui header left aligned"><%= instrClass.instructor.toUpperCase() %></h2>
+    <h3 class="ui header left aligned">TEACHES <%= instrClass.course.toUpperCase() %></h3>
+    <div class="ui container three column centered grid">
+        <div class="row">
+            <div class="ui container column segment">
+                <h4><%= instrClass.pitch.left_title %></h4>
+                <p><%= instrClass.pitch.left_description %></p>
+            </div>
+            <div class="ui container column segment">
+                <h4><%= instrClass.pitch.center_title %></h4>
+                <p><%= instrClass.pitch.center_description %></p>
+            </div>
+            <div class="ui container column segment">
+                <h4><%= instrClass.price %></h4>
+                <button class="ui red button">TAKE THE CLASS</button>
+                <button class="ui grey button" style="display: block">GIVE AS A GIFT</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Intro-->
+<div class="ui container items segment">
+    <div class="item">
+        <div class="image">
+            <img src="<%= instrClass.intro.image %>">
+        </div>
+        <div class="ui left aligned content">
+            <div class="header"><%= instrClass.intro.title %></div>
+            <div class="description">
+                <p><%= instrClass.intro.description %></p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Attributes-->
+<div class="ui container">
+    <div class="ui container three column centered grid">
+        <div class="row">
+            <div class="ui container column segment">
+                <h4><%= instrClass.attributes.lesson_count %></h4>
+                <p><%= instrClass.attributes.lesson_description %></p>
+            </div>        
+            <div class="ui container column segment">
+                <h4><%= instrClass.attributes.workbook %></h4>
+                <p><%= instrClass.attributes.workbook_description %></p>
+            </div>        
+            <div class="ui container column segment">
+                <h4>OFFICE HOURS</h4>
+                <p><%= instrClass.attributes.office_hours %></p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Lessons-->
+<div class="ui relaxed divided list container segment">
+    <% instrClass.lessons.forEach(function(lesson){ %>
+    <div class="item">
+        <div class="content">
+            <div class="ui header">
+                <%= lesson.chapter %> <%= lesson.title %>
+            </div>
+        </div>
+        <div class="description">
+            <p><%= lesson.description %></p>
+        </div>
+    </div>
+    <% }); %>
+</div>
+<!--Reviews-->
+<div class="ui container segment">
+    <div class="item">
+        <div class="image">
+            <img src="<%= instrClass.reviews[0].image %>">
+        </div>
+        <div class="content">
+            <div class="description">
+                <p>"<%= instrClass.reviews[0].quote %>"</p>
+                <p><strong><%= instrClass.reviews[0].user_name %></strong></p>
+                <p><%= instrClass.reviews[0].user_bio %></p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Guarentee-->
+<div class="ui container center aligned">
+    <div class="ui container three column centered grid">
+        <div class="row">
+            <div class="ui container column segment">
+                <h2>100%</h2>
+                <h3>GUARENTEED</h3>
+                <p>We offer full refunds up to 30 days after purchase.</p>
+            </div>        
+            <div class="ui container column segment">
+                <h3>ANY BROWSER</h3>
+                <p>Your class will play in any modern browser</p>
+            </div>        
+            <div class="ui container column segment">
+                <h3>NEVER EXPIRES</h3>
+                <p>Take the class at your own pace and in your own time</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Social-->
+<div class="ui center aligned container" style="margin: 50px;">
+    <button class="big ui circular blue inverted icon button">
+      <i class="twitter icon"></i>
+    </button>
+    <button class="big ui circular blue inverted icon button">
+      <i class="facebook f icon"></i>
+    </button>
+    <button class="big ui circular blue inverted icon button">
+      <i class="mail icon"></i>
+    </button>
+</div>
+
+
+<div class="ui center aligned container">
+    <div class="ui divided">
+        <% instrClass.courses.forEach(function(course){ %>
+        <div class="ui container segment">
+            <h2><%= course.instructor.toUpperCase() %></h2>
+            <h3>TEACHES <%= course.course.toUpperCase() %></h3>
+            <img src="<%= course.default_image %>">
+        </div>
+        <% }); %>
+    </div>
+</div>
+
+<% include partials/footer %>
