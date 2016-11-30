@@ -1,10 +1,18 @@
-<h1>INDEX PAGE</h1>
-
-<% classes.forEach(function(instrClass){ %>
-    <div>
-        <h2><%= instrClass.instructor %></h2>
-        <img src="<%= instrClass.default_image %>">
-        <p><%= instrClass.course %></p>
-        <a href="/classes/<%= instrClass.id %>">Read More</a>
-    </div>
-<% }) %>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Classes</title>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css">
+    </head>
+    <body class="ui container">
+        <h1>INDEX PAGE</h1>
+        
+        <% classes.forEach(function(instrClass){ %>
+            <div>
+                <h2><%= instrClass.instructor %></h2>
+                <img src="<%= instrClass.default_image %>">
+                <p><%= instrClass.course %></p>
+                <a class="ui black button" href="/classes/<%= instrClass.id %>">Read More</a>
+            </div>
+        <% }) %>
+        <% include partials/footer %>
