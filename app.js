@@ -3,7 +3,8 @@ var mongoose    = require("mongoose"),
     app         = express();
     
 // App config
-mongoose.connect("mongodb://localhost/masterclassdb");
+// mongoose.connect("mongodb://localhost/masterclassdb");
+mongoose.connect("mongodb://test_user:test_password@ds117348.mlab.com:17348/masterclassdb");
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 
